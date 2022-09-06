@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recommendations</title>
+    style. 
+          body { 
+            background-color: #252522; 
+            color: white; 
+          } 
+          img { 
+            height: 7rem; 
+            width: 5rem ; 
+          }
+  </head>
+  <body>
+    <h1>Movie Recommendations</h1>
+    <hr>
+    <table>
+      <h3>#{movie_searched}</h3>
+      <!-- movie 1 details -->
+      <tr>
+        <td><img src="#{movie1.d[0].i.imageUrl}" alt="" /></td>
+        <td>
+          <p><strong>#{movie1.d[0].l}</strong></p>
+          <p>Cast: #{movie1.d[0].s}</p>
+        </td>
+      </tr>
+
+      <!-- movie 2 details -->
+      <tr>
+        <td><img src="#{movie2.d[0].i.imageUrl}" alt="" /></td>
+        <td>
+          <p><strong>#{movie2.d[0].l}</strong></p>
+          <p>Cast: #{movie2.d[0].s}</p>
+        </td>
+      </tr>
+
+      <!-- movie 3 details -->
+      <tr>
+        <td><img src="#{movie3.d[0].i.imageUrl}" alt="" /></td>
+        <td>
+          <p><strong>#{movie3.d[0].l}</strong></p>
+          <p>Cast: #{movie3.d[0].s}</p>
+        </td>
+      </tr>
+
+      <!-- movie 4 details -->
+      <tr>
+        <td><img src="#{movie4.d[0].i.imageUrl}" alt="" /></td>
+        <td>
+          <p><strong>#{movie4.d[0].l}</strong></p>
+          <p>Cast: #{movie4.d[0].s}</p>
+        </td>
+      </tr>
+
+      <!-- movie 5 details -->
+
+      <tr>
+        <td><img src="#{movie5.d[0].i.imageUrl}" alt="" /></td>
+        <td>
+          <p><strong>#{movie5.d[0].l}</strong></p>
+          <p>Cast: #{movie5.d[0].s}</p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

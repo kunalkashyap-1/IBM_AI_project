@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie_sugg</title>
+    <style>
+        body{
+            background-color: #252522;
+            color: white;
+        }
+
+        .container{
+            display: grid;
+            justify-content: center;
+            margin:25vh;
+        }
+        
+        #inp{
+            margin: 1rem 0;
+            height: 2rem;
+            width: 27rem;
+        }
+
+        #inp::placeholder{
+            color: darkgray;
+        }
+
+        button{
+            height: 2.3rem;
+            width: 3rem;
+            background-color: darkslategray;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Movie Recommendation</h1>
+    <form action="/movie_recc" method="post">
+        <input id="inp" type="text" name="Movie" placeholder="Enter Movie Name">
+        <button type="submit" name="submit" >Go</button>
+    </form>
+</div>
+</body>
+</html>
