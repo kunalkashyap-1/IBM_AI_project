@@ -10,14 +10,6 @@ const port=8383;
 const app=express();
 
 
-var mov_ser;
-var mov1;
-var mov2;
-var mov3;
-var mov4;
-var mov5;
-
-
 
 app.use(bodyParse.urlencoded({extended:true}));
 
