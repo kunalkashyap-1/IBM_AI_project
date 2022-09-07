@@ -3,7 +3,7 @@ const bodyParse=require("body-parser");
 const spawn = require("child_process").spawn;
 const path=require("path");
 //api realted material
-// const request = require('request');
+const request = require('request');
 
 const port=8383;
 
@@ -37,7 +37,7 @@ app.post("/movie_recc", function (req,res){
 
     res.status(200).render("html.pug",{
         "movie_searched":mov_ser,
-        "movie1":dummy_api_func(mov1),
+        "movie1":api_func(mov1),
         "movie2":dummy_api_func(mov2),
         "movie3":dummy_api_func(mov3),
         "movie4":dummy_api_func(mov4),
@@ -51,24 +51,24 @@ app.post("/movie_recc", function (req,res){
 
 
 
-// function api_func(movie_name){
-//             //api related code
-//             const options = {
-//                 method: 'GET',
-//                 url: 'https://online-movie-database.p.rapidapi.com/auto-complete',
-//                 qs: {q: movie_name},
-//                 headers: {
-//                   'X-RapidAPI-Key': '70a6d7c1b2msh03249ba3dd0bd20p16b692jsn690df7aacd1c',
-//                   'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com',
-//                   useQueryString: true
-//                 }JSON.parse(body);JSON.parse(JSON.parse(body);JSON.parse(body);.parse(body);body);
-//               };
-//             request(options, function (error, response, body) {
-//                 if (error) throw new Error(error);
+function api_func(movie_name){
+            //api related code
+            const options = {
+                method: 'GET',
+                url: 'https://online-movie-database.p.rapidapi.com/auto-complete',
+                qs: {q: movie_name},
+                headers: {
+                  'X-RapidAPI-Key': '70a6d7c1b2msh03249ba3dd0bd20p16b692jsn690df7aacd1c',
+                  'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com',
+                  useQueryString: true
+                }
+              };
+            request(options, function (error, response, body) {
+                if (error) throw new Error(error);
                 
-//                 return JSON.parse(body);
-//     });
-// }
+                return JSON.parse(body);
+    });
+}
 
 function cleaner(data){
     let mystr=data.toString();
@@ -83,27 +83,6 @@ function cleaner(data){
     let myarr=mystr1.split("=");
     return myarr;
 }
-
-
-
-//redundent function/method
-
-// app.post("/movie_recc",function(req,res){
-//     let movie = req.body.Movie;
-//     const process=spawn("python",["./app.py",JSON.stringify(movie)]);
-//     process.stdout.on("data",(data)=>{
-//         // let result=Object.assign({},cleaner(data));
-//         // console.log(result);
-//         arr=cleaner(data);
-//         let mov_ser=(arr[1]).trim();
-//         let mov1=(arr[2]).trim();
-//         let mov2=(arr[3]).trim();
-//         let mov3=(arr[4]).trim();
-//         let mov4=(arr[5]).trim();
-//         let mov5=(arr[6]).trim();
-//     });
-
-// });
 
 
 //testing purpose api data
