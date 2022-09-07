@@ -9,6 +9,16 @@ const port=8383;
 
 const app=express();
 
+
+var mov_ser;
+var mov1;
+var mov2;
+var mov3;
+var mov4;
+var mov5;
+
+
+
 app.use(bodyParse.urlencoded({extended:true}));
 
 app.get("/",function(req,res){
@@ -28,28 +38,25 @@ app.post("/movie_recc", function (req,res){
         // let result=Object.assign({},cleaner(data));
         // console.log(result);
         arr=cleaner(data);
-        let mov_ser="Movie Selected:- "+movie.charAt(0).toUpperCase() + movie.slice(1);
-        let mov1=(arr[1]).trim();
-        let mov2=(arr[2]).trim();
-        let mov3=(arr[3]).trim();
-        let mov4=(arr[4]).trim();
-        let mov5=(arr[5]).trim();
+        mov_ser="Movie Selected:- "+movie.charAt(0).toUpperCase() + movie.slice(1);
+        mov1=(arr[1]).trim();
+        mov2=(arr[2]).trim();
+        mov3=(arr[3]).trim();
+        mov4=(arr[4]).trim();
+        mov5=(arr[5]).trim();
 
-    res.status(200).render("html.pug",{
-        "movie_searched":mov_ser,
-        "movie1":api_func(mov1),
-        "movie2":dummy_api_func(mov2),
-        "movie3":dummy_api_func(mov3),
-        "movie4":dummy_api_func(mov4),
-        "movie5":dummy_api_func(mov5)
-});
+        let params=[{
+          "movie_searched":mov_ser,
+          "movie1":api_func(mov1),
+          "movie2":dummy_api_func(mov2),
+          "movie3":dummy_api_func(mov3),
+          "movie4":dummy_api_func(mov4),
+          "movie5":dummy_api_func(mov5)
+      }];
+      res.status(200).render("movie_recc.pug",{"param":params})
 
     });
 });
-
-
-
-
 
 function api_func(movie_name){
             //api related code
@@ -65,10 +72,12 @@ function api_func(movie_name){
               };
             request(options, function (error, response, body) {
                 if (error) throw new Error(error);
-                
-                return JSON.parse(body);
+                let api_res=JSON.parse(body);
+                console.log(api_res);
+                return api_res;
     });
 }
+
 
 function cleaner(data){
     let mystr=data.toString();
