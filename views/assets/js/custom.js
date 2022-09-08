@@ -1,4 +1,4 @@
-
+// Api details and info 
 const options = {
 	method: 'GET',
 	headers: {
@@ -7,7 +7,7 @@ const options = {
 	}
 };
 
-
+// data to be accessed and their respective api requests 
 let data_mov1={
     "movie_name":document.querySelector(".mov1").textContent,
     "image":document.querySelector(".img1"),
