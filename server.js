@@ -11,7 +11,7 @@ const app=express();
 app.use(bodyParse.urlencoded({extended:true}));
 
 app.get("/",function(req,res){
-    res.sendFile(__dirname+"/text_html.html");
+    res.sendFile(__dirname+"/index.html");
 });
 
 //pug realted stuff
@@ -67,5 +67,5 @@ function cleaner(data){
 
 
 app.listen(port, ()=>{
-    console.log("Server is active on port 8383");
+    console.log(`Server is active on port ${port}`);
 })
