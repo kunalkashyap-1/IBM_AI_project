@@ -7,3 +7,12 @@ body {
    height: 7rem; 
    width: 5rem ; 
  }
+
+ p{
+  margin:3px;
+}
+
+table { 
+  border-spacing: 10px;
+  border-collapse: separate;
+}
