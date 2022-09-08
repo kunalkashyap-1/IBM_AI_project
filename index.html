@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie_sugg</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         body{
             background-color: #252522;
             color: white;
@@ -14,7 +18,8 @@
         .container{
             display: grid;
             justify-content: center;
-            margin:25vh;
+            margin:30vh;
+            gap:1rem;
         }
         
         #inp{
@@ -23,13 +28,10 @@
             width: 30rem;
         }
 
-        #inp::placeholder{
-            color: darkgray;
-        }
-
         button{
             height: 2.3rem;
             width: 6rem;
+            margin: 1rem;
             background-color: darkslategray;
             color: white;
         }
