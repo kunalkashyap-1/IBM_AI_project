@@ -2,9 +2,6 @@ const express=require("express");
 const bodyParse=require("body-parser");
 const spawn = require("child_process").spawn;
 const path=require("path");
-//api realted material
-const request = require('request');
-
 const port=8383;
 
 const app=express();
@@ -37,38 +34,39 @@ app.post("/movie_recc", function (req,res){
         mov4=(arr[4]).trim();
         mov5=(arr[5]).trim();
 
-        let params=[{
+        let params={
           "movie_searched":mov_ser,
-          "movie1":api_func(mov1),
-          "movie2":dummy_api_func(mov2),
-          "movie3":dummy_api_func(mov3),
-          "movie4":dummy_api_func(mov4),
-          "movie5":dummy_api_func(mov5)
-      }];
-      res.status(200).render("movie_recc.pug",{"param":params})
+          "movie1":mov1,
+          "movie2":mov2,
+          "movie3":mov3,
+          "movie4":mov4,
+          "movie5":mov5
+      };
+      
 
+      res.status(200).render("movie_recc.pug",{"param":params});
     });
 });
 
-function api_func(movie_name){
-            //api related code
-            const options = {
-                method: 'GET',
-                url: 'https://online-movie-database.p.rapidapi.com/auto-complete',
-                qs: {q: movie_name},
-                headers: {
-                  'X-RapidAPI-Key': '70a6d7c1b2msh03249ba3dd0bd20p16b692jsn690df7aacd1c',
-                  'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com',
-                  useQueryString: true
-                }
-              };
-            request(options, function (error, response, body) {
-                if (error) throw new Error(error);
-                let api_res=JSON.parse(body);
-                console.log(api_res);
-                return api_res;
-    });
-}
+// function api_func(movie_name){
+//             //api related code
+//             const options = {
+//                 method: 'GET',
+//                 url: 'https://online-movie-database.p.rapidapi.com/auto-complete',
+//                 qs: {q: movie_name},
+//                 headers: {
+//                   'X-RapidAPI-Key': '70a6d7c1b2msh03249ba3dd0bd20p16b692jsn690df7aacd1c',
+//                   'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com',
+//                   useQueryString: true
+//                 }
+//               };
+//             request(options, function (error, response, body) {
+//                 if (error) throw new Error(error);
+//                 let api_res=JSON.parse(body);
+//                 console.log(api_res);
+//                 return api_res;
+//     });
+// }
 
 
 function cleaner(data){

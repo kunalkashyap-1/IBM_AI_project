@@ -5,66 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recommendations</title>
-    style. 
-          body { 
-            background-color: #252522; 
-            color: white; 
-          } 
-          img { 
-            height: 7rem; 
-            width: 5rem ; 
-          }
+    style
+        include ./assets/css/style.css
   </head>
   <body>
     <h1>Movie Recommendations</h1>
     <hr>
     <table>
-      <h3>#{param[0].movie_searched}</h3>
+      <h3>#{param.movie_searched}</h3>
       <!-- movie 1 details -->
       <tr>
-        <td><img src="#{param[0].movie1.d[0].i.imageUrl}" alt="" /></td>
+        <td><img class="img1" src="" alt="" /></td>
         <td>
-          <p><strong>#{param[0].movie1.d[0].l}</strong></p>
-          <p>Cast: #{param[0].movie1.d[0].s}</p>
+          <p class="mov1"><strong>!{param.movie1}</strong></p>
+          <p class="cast1"></p>
         </td>
       </tr>
 
       <!-- movie 2 details -->
       <tr>
-        <td><img src="#{param[0].movie2.d[0].i.imageUrl}" alt="" /></td>
+        <td><img class="img2" src="" alt="" /></td>
         <td>
-          <p><strong>#{param[0].movie2.d[0].l}</strong></p>
-          <p>Cast: #{param[0].movie2.d[0].s}</p>
+          <p class="mov2"><strong>!{param.movie2}</strong></p>
+          <p class="cast2"></p>
         </td>
       </tr>
 
       <!-- movie 3 details -->
       <tr>
-        <td><img src="#{param[0].movie3.d[0].i.imageUrl}" alt="" /></td>
+        <td><img class="img3" src="" alt="" /></td>
         <td>
-          <p><strong>#{param[0].movie3.d[0].l}</strong></p>
-          <p>Cast: #{param[0].movie3.d[0].s}</p>
+          <p class="mov3"><strong>!{param.movie3}</strong></p>
+          <p class="cast3"></p>
         </td>
       </tr>
 
       <!-- movie 4 details -->
       <tr>
-        <td><img src="#{param[0].movie4.d[0].i.imageUrl}" alt="" /></td>
+        <td><img class="img4" src="" alt="" /></td>
         <td>
-          <p><strong>#{param[0].movie4.d[0].l}</strong></p>
-          <p>Cast: #{param[0].movie4.d[0].s}</p>
+          <p class="mov4"><strong>!{param.movie4}</strong></p>
+          <p class="cast4"></p>
         </td>
       </tr>
 
       <!-- movie 5 details -->
 
       <tr>
-        <td><img src="#{param[0].movie5.d[0].i.imageUrl}" alt="" /></td>
+        <td><img class="img5" src="" alt="" /></td>
         <td>
-          <p><strong>#{param[0].movie5.d[0].l}</strong></p>
-          <p>Cast: #{param[0].movie5.d[0].s}</p>
+          <p class="mov5"><strong>!{param.movie5}</strong></p>
+          <p class="cast5"></p>
         </td>
       </tr>
     </table>
+    script
+        include ./assets/js/custom.js
   </body>
 </html>
