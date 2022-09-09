@@ -66,6 +66,6 @@ function cleaner(data){
 
 
 
-app.listen(port, ()=>{
-    console.log(`Server is active on port ${port}`);
+app.listen(process.env.PORT || port, ()=>{
+    console.log(`Server is started Successfully`);
 })
