@@ -6,24 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie_sugg</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
         *{
             margin: 0;
             padding: 0;
         }
         body{
-            background-color: #252522;
+            font-family: 'Roboto', sans-serif;
             color: white;
+            background-image: url(image_dark.jpg);
+            background-size: cover;
         }
 
         .container{
-            display: grid;
-            justify-content: center;
-            margin:30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            flex-wrap: wrap;
+            margin: 35vh 25vw;
             gap:1rem;
+            overflow: hidden;
+        }
+
+        .container>h1{
+            margin: 0 1rem;
         }
         
         #inp{
-            margin: 1rem 0;
+            margin: 0 1rem;
             height: 2rem;
             width: 30rem;
         }
@@ -32,7 +42,7 @@
             height: 2.3rem;
             width: 6rem;
             margin: 1rem;
-            background-color: darkslategray;
+            background-color: #E50914;
             color: white;
         }
     </style>
