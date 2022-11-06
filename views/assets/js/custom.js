@@ -7,38 +7,34 @@ const options = {
 	}
 };
 
-// data to be accessed and their respective api requests 
-let data_mov1={
+// data to be accessed and rendered 
+let data_mov=[{
     "movie_name":document.querySelector(".mov1").textContent,
     "image":document.querySelector(".img1"),
     "cast":document.querySelector(".cast1")
-}
-
-let data_mov2={
+},
+{
     "movie_name":document.querySelector(".mov2").textContent,
     "image":document.querySelector(".img2"),
     "cast":document.querySelector(".cast2")
-}
-
-let data_mov3={
+},
+{
     "movie_name":document.querySelector(".mov3").textContent,
     "image":document.querySelector(".img3"),
     "cast":document.querySelector(".cast3")
-}
-
-let data_mov4={
+},
+{
     "movie_name":document.querySelector(".mov4").textContent,
     "image":document.querySelector(".img4"),
     "cast":document.querySelector(".cast4")
-}
-
-let data_mov5={
+},
+{
     "movie_name":document.querySelector(".mov5").textContent,
     "image":document.querySelector(".img5"),
     "cast":document.querySelector(".cast5")
-}
+}]
 
-
+//api request 
 function getData(movie){
     fetch('https://online-movie-database.p.rapidapi.com/auto-complete?q='+movie.movie_name, options)
     .then(response => response.json())
@@ -50,11 +46,9 @@ function getData(movie){
     
 }
 
-getData(data_mov1);
-getData(data_mov2);
-getData(data_mov3);
-getData(data_mov4);
-getData(data_mov5);
-
+//Api calls for every recommended movie 
+data_mov.forEach(element => {
+    getData(element);
+});
 
 
